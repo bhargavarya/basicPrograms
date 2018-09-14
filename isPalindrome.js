@@ -1,18 +1,18 @@
-function isPalindrome(word){
-    
-    let rev ='';
-
-    //to reverse the word
-    for(i=0; i < word.length; i++){
-        rev = rev + word[word.length-1-i];
-    }
-    
-    //to check if palindrome and return result
-    if(word === rev){
-        console.log('"'+word + '" is a palindrome');
-    } else {
-        console.log('"'+ word + '" is not a palindrome');
+function isPalindrome(string){
+    if(!string || string.length <= 1){
+        return(true);
+    }else{
+        let rev ='';
+        for(i=0; i < string.length; i++){
+            rev = rev + string[string.length-1-i];
+        }
+        if(string === rev){
+            return true;
+        } else {
+            return false;
+        }
     }
 }
-
-isPalindrome('racecar');
+console.log(isPalindrome('-madras'));
+console.log(isPalindrome(121));
+console.log(isPalindrome('1'));

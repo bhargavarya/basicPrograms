@@ -1,9 +1,14 @@
-let arr = [5,3,7,8,3,5,0,3,7];
-let rev = [];
-let k = arr.length;
-
-for (i = 0; i < arr.length; i++){
-    rev[k - 1 - i] = arr[i];
+function toReverseArray(array){
+    if(!array || array.length <= 0){
+        return(undefined);
+    }else{
+        let rev = [];
+        for(i = array.length - 1; i >= 0; i--){
+            rev.push(array[i]);
+        }return(rev);
+    }
 }
 
-console.log(rev)
+console.log(toReverseArray([1,2,3,4]));
+console.log(toReverseArray([]));
+console.log(toReverseArray([1]));
