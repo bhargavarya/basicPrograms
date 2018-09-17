@@ -2,12 +2,12 @@ function toRotateMatrix(matrix){
     if(!matrix || matrix.length <= 0){
         return(undefined);
     }else{
-        let rotated = matrix;
+        const rotated = JSON.parse(JSON.stringify(matrix));
+        console.log(rotated); 
         for(i = 0; i < matrix.length; i ++){
             for(j = 0; j < matrix[i].length ; j ++){
-                console.log(matrix[i][j]);
-                rotated[j][matrix[i].length - i - 1] = matrix[i][j];
-                //console.log(rotated);       
+                rotated[j][matrix[i].length - i - 1] = matrix[i][j];   
+                //console.log(matrix); 
             }
         }return(rotated);
     }
