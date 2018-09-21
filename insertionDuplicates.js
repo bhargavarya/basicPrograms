@@ -24,6 +24,7 @@ function toInsertSort(arr){
         }
     }
     return(arr);
+    
 }
 
 console.log(toInsertSort([5,7,3,6,6,6,2,9,9]));
