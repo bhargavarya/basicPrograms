@@ -1,0 +1,65 @@
+body {    
+    margin:0px;
+    background: white;
+    color: black;
+    font-family: Times;
+}
+#navtab {
+    padding: 20px;
+}
+#navtab a{
+    font-size: 20px;
+    padding: 20px;
+    color: black;
+    font-family:  Times;
+
+}
+#banner {
+    background : url("D:\\rauzr\\basicPrograms\\Web\\Images\\NBA-Rematch-Games.jpg");
+    background-size: cover;
+    color: white;
+    font-size: 40px;
+    padding: 200px;
+    text-align: center;
+    margin: 0px;
+    font-family: Georgia, Times, serif;
+}
+.content {
+    background: #E0E0E0;
+    color: black;
+    font-family: Georgia, Times, serif;
+    font-size: 20px;
+}
+#banner p {
+    font-size: 20px;
+}
+.navigation {
+    font-family: Georgia, Times, 'Times New Roman', serif;
+    font: 15px;
+    text-align: right;
+}
+#footer {
+    color: grey;
+    background: black;
+    padding: 20px;
+    text-align: center;
+}
+#footer span{
+    color: grey;
+    font-size: 15px;
+    padding-bottom: 40px
+}
+#footer span:hover{
+    color: white;
+    font-size: 20px;
+}
+#footer a {
+    color: grey;
+    font-size: 15px;
+    padding: 20px;
+    padding: bottom 20px;
+}
+#footer a:hover {
+    color: white;
+    font-size: 25px;
+}
