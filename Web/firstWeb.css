@@ -1,47 +1,93 @@
 body {    
-    margin:0px;
     background: white;
-    color: black;
-    font-family: Times;
 }
 #navtab {
-    padding: 20px;
+    padding: 15px;
+    margin-left: 15%;
+    margin-right: 15%;
+    border-bottom: 1px solid black;
+    background-color: white;
 }
 #navtab a{
-    font-size: 20px;
+    font-size: 15px;
+    padding: 30px;
+    padding-top: 30px;
+    color: #424242;
+    font-family: 'Raleway', sans-serif;
+}
+#navtab a:hover {
+    font-size: 15px;
     padding: 20px;
-    color: black;
-    font-family:  Times;
-
+    padding-top: 30px;
+    color: #F57C00;
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
 }
-#banner {
-    background : url("D:\\rauzr\\basicPrograms\\Web\\Images\\NBA-Rematch-Games.jpg");
-    background-size: cover;
-    color: white;
+#sidebar {
+    padding: 30px;
+    background: #FFF3E0;
+}
+#sidebar-icons a{
     font-size: 40px;
-    padding: 200px;
-    text-align: center;
-    margin: 0px;
-    font-family: Georgia, Times, serif;
-}
-.content {
-    background: #E0E0E0;
-    color: black;
-    font-family: Georgia, Times, serif;
-    font-size: 20px;
-}
-#banner p {
-    font-size: 20px;
-}
-.navigation {
-    font-family: Georgia, Times, 'Times New Roman', serif;
-    font: 15px;
     text-align: right;
+    color: #F57C00;
+}
+#sidebar-text {
+    font-size: 18px;
+    color: black;
+}
+#maincontainer {
+    padding-top: 40px;
+    font-family: 'Raleway', sans-serif;
+}
+#restaurants {
+    margin-left: 15%;
+    margin-right: 15%;
+    background-color: #ffffff;
+    font-family: 'Raleway', sans-serif;
+    text-align: left;
+}
+#restaurants h1 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+#restcard {
+    padding: 15px;
+    margin-left: 3%;
+    margin-right: 3%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border: 2px solid white;
+}
+#restcard:hover {
+    border: 2px solid grey;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px 0 grey
+}
+#restaurant-image {
+    align-content: center;
+}
+#restcards h5 {
+    padding: 5px;
+    font-weight: bold;
+}
+#rating {
+    margin-left: 15px;
+    padding-left: 5px;
+    padding-right: 5px;
+    background-color: #558B2F;
+    border: 2px solid #558B2F;
+    border-radius: 5px;
+    font-family: 'K2D', sans-serif;
+    color: white;
+}
+#delivery-time {
+    padding-right: 15px;
 }
 #footer {
     color: grey;
     background: black;
-    padding: 20px;
+    padding-top: 20px;
     text-align: center;
 }
 #footer span{
@@ -57,9 +103,9 @@ body {
     color: grey;
     font-size: 15px;
     padding: 20px;
-    padding: bottom 20px;
+    padding: bottom 40px;
 }
 #footer a:hover {
     color: white;
-    font-size: 25px;
+    font-size: 15px;
 }

@@ -1,75 +1,284 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>First Landing page</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="./font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" media="screen" href="firstWeb.css" />
     <script src="main.js"></script>
+
 </head>
+
 <body>
-    <div id='navtab'>
-        <div class="container-fluid">
-            <div class = 'row'>
-                <div  class='col-xs-0 col-md-4 col-lg-2 col-lg-offset-2'>
-                        <div class= 'logo'>
-                                <img src = './Images/logo.png' height="40px" width="150px">
+    <div class="main-container">
+        <div id='navtab'>
+            <img src='./Images/logo.png' height="40px" width="150px">
+            <a href=""></a><i class="fa fa-map-marker" aria-hidden="true"></i> Gachibowli</a>
+            <ul style="position: relative; float: right">
+                <li style="display: inline">
+                    <a href=""><i class="fa fa-search" aria-hidden="true"></i> Search</a>
+                </li>
+                <li style="display: inline">
+                    <a href=""><i class="fa fa-phone" aria-hidden="true"></i> Customer Care</a>
+                </li>
+                <li style="display: inline">
+                    <a href=""><i class="fa fa-user" aria-hidden="true"></i> Login</a>
+                </li>
+                <li style="display: inline">
+                    <a href=""><i class="fa fa-shopping-basket" aria-hidden="true"></i> Cart</a>
+                </li>
+            </ul>
+        </div>
+        <div class="container" id="sidebar">
+            <div class="col-md-1">
+                <div id='sidebar-icons' style="text-align:right">
+                    <div><a href=""><i class="fa fa-bolt" aria-hidden="true"></i></a></div>
+                </div>
+            </div>
+            <div class="col-md-3" style="padding-top: 15px">
+                <div id='sidebar-text'>
+                    Lightning fast delivery
+                </div>
+            </div>
+            <div class="col-md-1 col-lg-offset-0">
+                <div id='sidebar-icons' style="text-align:right">
+                    <div><a href=""><i class="fa fa-clock-o" aria-hidden="true"></i></a></div>
+                </div>
+            </div>
+            <div class="col-md-3" style="padding-top: 15px">
+                <div id='sidebar-text'>
+                    Anytime of the day
+                </div>
+            </div>
+            <div class="col-md-1 col-lg-offset-0">
+                <div id='sidebar-icons' style="text-align:right">
+                    <div><a href=""><i class="fa fa-fire" aria-hidden="true"></i></a></div>
+                </div>
+            </div>
+            <div class="col-md-3" style="padding-top: 15px">
+                <div id='sidebar-text'>
+                    Hot and direct from kitchen
+                </div>
+            </div>
+        </div>
+        <section style='padding-top: 30px; padding-bottom: 30px' id="restaurants">
+            <div class="container">
+                <h1 style="text-align:center">
+                    Pick from your favourite restaurants below
+                </h1>
+
+                <div class="row col-lg-offset-0">
+                    <div class="col-md-3 col-sm-6" id="restcard">
+                        <div class="featurecard" style="background-color: white;">
+                            <div class="text-center"><img id="restaurant-image" src="https://picsum.photos/250/150?random"></div>
+                            <h5>
+                                Pista House
+                            </h5>
+                            <h6>
+                                Biryani, Hyderabadi, North Indian, Tandoor, Mughlai, Chinese, Bakery, Pizzas
+                            </h6>
+                            <div>
+                                <div style="position:relative;float:left" id="rating">
+                                    4.6
+                                </div>
+                                <div style="position:relative;float:right" id="delivery-time">
+                                    37 mins
+                                </div>
+                            </div>
                         </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6" id="restcard">
+                        <div class="featurecard" style="background-color: white;">
+                            <div class="text-center"><img src="https://picsum.photos/250/150?random"></div>
+                            <h5>
+                                Al saba
+                            </h5>
+                            <h6>
+                                Biryani, Hyderabadi, North Indian, Tandoor, Mughlai, Chinese, Bakery, Pizzas
+                            </h6>
+                            <div>
+                                <div style="position:relative;float:left" id="rating">
+                                    4.6
+                                </div>
+                                <div style="position:relative;float:right" id="delivery-time">
+                                    37 mins
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6" id="restcard">
+                        <div class="featurecard" style="background-color: white;">
+                            <div class="text-center"><img src="https://picsum.photos/250/150?random"></div>
+                            <h5>
+                                KFC
+                            </h5>
+                            <h6>
+                                Biryani, Hyderabadi, North Indian, Tandoor, Mughlai, Chinese, Bakery, Pizzas
+                            </h6>
+                            <div>
+                                <div style="position:relative;float:left" id="rating">
+                                    4.6
+                                </div>
+                                <div style="position:relative;float:right" id="delivery-time">
+                                    37 mins
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div  class='col-xs-0 col-md-4 col-lg-2'>
-                        <a href=""><i class="fa fa-home" aria-hidden="true"></i> Home</a>
+                <div class="row col-lg-offset-0">
+                    <div class="col-md-3 col-sm-6" id="restcard">
+                        <div class="featurecard" style="background-color: white;">
+                            <div class="text-center"><img src="https://picsum.photos/250/150?random"></div>
+                            <h5>
+                                MC Donald's
+                            </h5>
+                            <h6>
+                                Biryani, Hyderabadi, North Indian, Tandoor, Mughlai, Chinese, Bakery, Pizzas
+                            </h6>
+                            <div>
+                                <div style="position:relative;float:left" id="rating">
+                                    4.6
+                                </div>
+                                <div style="position:relative;float:right" id="delivery-time">
+                                    37 mins
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6" id="restcard">
+                        <div class="feature feature-icon-large card" style="background-color: white;">
+                            <div class="text-center"><img src="https://picsum.photos/250/150?random"></div>
+                            <h5>
+                                Makers of Milkshake
+                            </h5>
+                            <h6>
+                                Biryani, Hyderabadi, North Indian, Tandoor, Mughlai, Chinese, Bakery, Pizzas
+                            </h6>
+                            <div>
+                                <div style="position:relative;float:left" id="rating">
+                                    4.6
+                                </div>
+                                <div style="position:relative;float:right" id="delivery-time">
+                                    37 mins
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6" id="restcard">
+                        <div class="featurecard" style="background-color: white;">
+                            <div class="text-center"><img src="https://picsum.photos/250/150?random"></div>
+                            <h5>
+                                Thick shake factory
+                            </h5>
+                            <h6>
+                                Biryani, Hyderabadi, North Indian, Tandoor, Mughlai, Chinese, Bakery, Pizzas
+                            </h6>
+                            <div>
+                                <div style="position:relative;float:left" id="rating">
+                                    4.6
+                                </div>
+                                <div style="position:relative;float:right" id="delivery-time">
+                                    37 mins
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div>
-
+                <div class="row  col-lg-offset-0">
+                    <div class="col-md-3 col-sm-6 " id="restcard">
+                        <div class="featurecard" style="background-color: white;">
+                            <div class="text-center"><img src="https://picsum.photos/250/150?random"></div>
+                            <h5>
+                                Pizza hut
+                            </h5>
+                            <h6>
+                                Biryani, Hyderabadi, North Indian, Tandoor, Mughlai, Chinese, Bakery, Pizzas
+                            </h6>
+                            <div>
+                                <div style="position:relative;float:left" id="rating">
+                                    4.6
+                                </div>
+                                <div style="position:relative;float:right" id="delivery-time">
+                                    37 mins
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6" id="restcard">
+                        <div class="featurecard" style="background-color: white;">
+                            <div class="text-center"><img src="https://picsum.photos/250/150?random"></div>
+                            <h5>
+                                Dominos
+                            </h5>
+                            <h6>
+                                Biryani, Hyderabadi, North Indian, Tandoor, Mughlai, Chinese, Bakery, Pizzas
+                            </h6>
+                            <div>
+                                <div style="position:relative;float:left" id="rating">
+                                    4.6
+                                </div>
+                                <div style="position:relative;float:right" id="delivery-time">
+                                    37 mins
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6" id="restcard">
+                        <div class="featurecard" style="background-color: white;">
+                            <div class="text-center"><img src="https://picsum.photos/250/150?random"></div>
+                            <h5>
+                                Pista House
+                            </h5>
+                            <h6>
+                                Biryani, Hyderabadi, North Indian, Tandoor, Mughlai, Chinese, Bakery, Pizzas
+                            </h6>
+                            <div>
+                                <div style="position:relative;float:left" id="rating">
+                                    4.6
+                                </div>
+                                <div style="position:relative;float:right" id="delivery-time">
+                                    37 mins
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
-    <div id='banner'>
-            <h1>My First Website</h1>
-            <p>website is under construction</p>
-    </div>
-    
-    <div class = 'content'>
-        <p>
-            This website is under construction
-        </p>
-        <p>
-            click <a href = 'https://www.nba.com/' target = '_blank' title="Visit the official NBA website">here</a> for NBA website
-            <img src = './Images/i.png' alt = 'image not available' height = '30' width = '30'><br><br><br>
-        </p>
-    </div>
-    <div class = 'navigation'>
-        <p>
-            <a href='#' class = 'btn btn-primary';>Next Page</a>
-        </p>
-    </div>
-    <div id='footer'>
-        <div class="container-fluid">
-            <div class="row">
-                <div class = 'col-xs-12 col-md-6 col-lg-2 col-lg-offset-2'>
+        </section>
+        2
+        <div id='footer'>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class='col-xs-12 col-md-6 col-lg-2 col-lg-offset-2'>
                         <span>Contact Us</span>
+                    </div>
+                    <div class='col-xs-12 col-md-6 col-lg-4 '>
+                        <span>More Info</span>
+                    </div>
+                    <div class='col-xs-12 col-md-6 col-lg-2'>
+                        <span>About us</span>
+                    </div><br><br>
                 </div>
-                <div class = 'col-xs-12 col-md-6 col-lg-4 '>
-                    <span>More Info</span>
-                </div>
-                <div class = 'col-xs-12 col-md-6 col-lg-2'>
-                    <span>About us</span>
-                </div><br><br>
+                <p>
+                    <ul class='list-inline'>
+                        <li><a href=""><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                        <li><a href=""><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                        <li><a href=""><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                    </ul>
+                </p><br><br>
             </div>
-                    <p>
-                        <ul class= 'list-inline'>
-                            <li><a href=""><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                            <li><a href=""><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                            <li><a href=""><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                        </ul>
-                    </p><br><br>
-            </div>    
         </div>
-    
 
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous"></script>
+    </div>
 </body>
+
 </html>
