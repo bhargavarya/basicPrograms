@@ -1,45 +1,83 @@
-body {    
+body {
     background: white;
 }
+
 #navtab {
     padding: 15px;
-    margin-left: 15%;
-    margin-right: 15%;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid #BDBDBD;
     background-color: white;
+    position: fixed;
+    top: 0px;
+    z-index: 3;
+    width: 70%;
+    left: 15%;
+    font-weight: bold;
 }
-#navtab a{
+
+#navtab a {
     font-size: 15px;
     padding: 30px;
     padding-top: 30px;
     color: #424242;
     font-family: 'Raleway', sans-serif;
+    font-weight: bold;
 }
+
 #navtab a:hover {
     font-size: 15px;
-    padding: 20px;
+    padding: 30px;
     padding-top: 30px;
     color: #F57C00;
     font-family: 'Raleway', sans-serif;
     font-weight: bold;
+    text-decoration: none;
 }
+
 #sidebar {
     padding: 30px;
+    margin-top: 71px;
     background: #FFF3E0;
 }
-#sidebar-icons a{
+
+#sidebar-icons a {
     font-size: 40px;
     text-align: right;
     color: #F57C00;
 }
+
 #sidebar-text {
     font-size: 18px;
     color: black;
 }
+
 #maincontainer {
     padding-top: 40px;
     font-family: 'Raleway', sans-serif;
 }
+
+.banner {
+    position: absolute;
+    padding-left: 10px;
+    padding-right: 15px;
+    margin-left: -8px;
+    background-color: #F57C00;
+    color: #ffffff;
+    font-weight: bold;
+    border-radius: 3px;
+}
+
+.banner-triangle {
+    border-color: #F57C00 transparent transparent transparent;
+    width: 0;
+    height: 0;
+    border-width: 10px 0px 10px 10px;
+    border-style: solid;
+    margin: -8px;
+    position: relative;
+    offset: unset;
+    top: 41px;
+}
+
 #restaurants {
     margin-left: 15%;
     margin-right: 15%;
@@ -47,10 +85,12 @@ body {
     font-family: 'Raleway', sans-serif;
     text-align: left;
 }
+
 #restaurants h1 {
     margin-top: 20px;
     margin-bottom: 20px;
 }
+
 #restcard {
     padding: 15px;
     margin-left: 3%;
@@ -59,18 +99,22 @@ body {
     margin-bottom: 5px;
     border: 2px solid white;
 }
+
 #restcard:hover {
-    border: 2px solid grey;
+    border: 2px solid #BDBDBD;
     border-radius: 10px;
     box-shadow: 0 5px 10px 0 grey
 }
+
 #restaurant-image {
     align-content: center;
 }
+
 #restcards h5 {
     padding: 5px;
     font-weight: bold;
 }
+
 #rating {
     margin-left: 15px;
     padding-left: 5px;
@@ -81,30 +125,42 @@ body {
     font-family: 'K2D', sans-serif;
     color: white;
 }
+
+#rating a {
+    color: white;
+    text-decoration: none;
+}
+
 #delivery-time {
     padding-right: 15px;
+    font-family: 'K2D', sans-serif;
 }
+
 #footer {
     color: grey;
     background: black;
     padding-top: 20px;
     text-align: center;
 }
-#footer span{
+
+#footer span {
     color: grey;
     font-size: 15px;
     padding-bottom: 40px
 }
-#footer span:hover{
+
+#footer span:hover {
     color: white;
     font-size: 20px;
 }
+
 #footer a {
     color: grey;
     font-size: 15px;
     padding: 20px;
     padding: bottom 40px;
 }
+
 #footer a:hover {
     color: white;
     font-size: 15px;
