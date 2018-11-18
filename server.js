@@ -1,112 +1,118 @@
 var express = require('express');
 var app = express();
-var bodyParser = require('body-parser'); // pull information from HTML POST (express4)
-var methodOverride = require('method-override'); // simulate DELETE and PUT (express4)
+var bodyParser = require('body-parser');
+var methodOverride = require('method-override');
+var Restaurant = require('./restaurantSchema');
 
 app.use(bodyParser.urlencoded({
     'extended': 'true'
-})); // parse application/x-www-form-urlencoded
-app.use(bodyParser.json()); // parse application/json
+}));
+app.use(bodyParser.json());
 app.use(bodyParser.json({
     type: 'application/vnd.api+json'
-})); // parse application/vnd.api+json as json
+}));
 app.use(methodOverride());
 
 app.use(function (req, res, next) {
-    console.log("MY MIDDLE WARE");
-    //res.send("Cant continue");
+    console.log(Date.now());
     next();
 })
-let menuItems = [
 
-    {
-        id: 1,
-        name: 'idli',
-        price: 10
-    },
-    {
-        id: 2,
-        name: 'dosa',
-        price: 10
-    },
-    {
-        id: 3,
-        name: 'idli1',
-        price: 20
-    },
-    {
-        id: 4,
-        name: 'idli3',
-        price: 30
-    },
-    {
-        id: 5,
-        name: 'vada',
-        price: 10
-    },
-    {
-        id: 6,
-        name: 'Upma',
-        price: 100
-    },
-]
-
-app.get('/', function (req, res) {
-    res.send("Helloworld")
+app.get('/restaurant', function (req, res) {
+    Restaurant.find({}).exec((err, result) => {
+        if (err) {
+            console.log('err');
+            res.status(500).send('problem retrieving:' + err);
+        }
+        res.status(200).send(result);
+    })
 })
 
-app.get('/menuitems', function (req, res) {
-    res.send(menuItems);
+app.get('/restaurants/:name', function (req, res) {
+    let restaurantsName = req.params.name;
+
+    Restaurant.find({
+            name: restaurantsName
+        })
+        .exec((err, items) => {
+            if (err) {
+                console.log(err)
+                res.status(500).send('problem retrieving:' + err);
+            }
+            res.status(200).send(items);
+        })
 })
 
-// app.get('/menuitems/:id', function (req, res) {
+app.get('/restaurant/:tag', function (req, res) {
+    let restaurantTag = req.params.tag;
 
-//     let menuitemid = req.params.id;
-//     let menuitem = menuItems.find(item => item.id == menuitemid);
-//     if (menuitem) {
-//         res.send(menuitem);
-//     } else {
-//         res.send("Not found");
-//     }
-// })
+    Restaurant.find({
+            tag: restaurantTag
+        })
+        .exec((err, item) => {
+            if (err) {
+                console.log(err)
+                res.status(500).send("problem retrieving")
+            }
+            res.status(200).send(item);
+        })
+})
 
+app.get('/restaurants', function (req, res) {
 
-app.post("/menuitems", function (req, res) {
-    let newmenuitem = req.body;
-    console.log("received: " + newmenuitem);
-    menuItems.push(newmenuitem);
-    res.send("Added Successfully");
-});
+    let name = req.query.name;
+    let tag = req.query.tag;
 
+    let queryParams = [];
 
-app.put("/menuitems", function (req, res) {
-
-    let updateitem = req.body;
-    console.log("updateitem: " + JSON.stringify(updateitem));
-
-    let existingmenuitem = menuItems.find(item => item.id == updateitem.id);
-
-    if (existingmenuitem) {
-        existingmenuitem.name = updateitem.name;
-        existingmenuitem.price = updateitem.price;
-
-        res.send("Updated Successfully");
-    } else {
-        res.send("Item not found");
+    if (name) {
+        queryParams.push({
+            name: name
+        });
     }
 
-});
-app.delete('/menuitems/:id', function (req, res) {
-
-    let menuitemid = req.params.id;
-    menuItems = menuItems.filter(item => item.id != menuitemid);
-    res.send("Deleted");
+    if (tag) {
+        queryParams.push({
+            tag: tag
+        });
+    }
+    Restaurant.find({
+        $or: queryParams
+    }, (err, result) => {
+        res.status(200).send(result);
+    })
 })
 
 
-var server = app.listen(8082, function () {
-    var host = server.address().address
-    var port = server.address().port
-    console.log("vizkart app listening at http://%s:%s", host, port)
+app.put('/restaurants/:name', (req, res) => {
+    let updateRestaurant = req.body;
+    let name = req.params.name;
 
+    Restaurant.findOne({
+            name: name
+        })
+        .exec((err, Restaurant) => {
+            Object.assign(Restaurant, updateRestaurant);
+            Restaurant.save((err, items) => {
+                res.status(200).send(items);
+            });
+        });
+});
+
+var mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost/myRestApp');
+var db = mongoose.connection;
+
+db.on('error', function (err) {
+    console.log('ERROR');
+})
+
+db.once('open', function () {
+    console.log('DB is through the wormhole');
+})
+
+var server = app.listen(8082, function () {
+    var host = server.address().address;
+    var port = server.address().port;
+    console.log('Worm hole to the webserver is now open at http://%s:%s', host, port);
 })
