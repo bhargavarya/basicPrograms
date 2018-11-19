@@ -91,13 +91,44 @@ app.put('/restaurants/:name', (req, res) => {
     Restaurant.findOne({
             name: name
         })
-        .exec((err, Restaurant) => {
-            Object.assign(Restaurant, updateRestaurant);
-            Restaurant.save((err, items) => {
-                res.status(200).send(items);
+        .exec((err, restaurant) => {
+            Object.assign(restaurant, updateRestaurant);
+            restaurant.save((err, item) => {
+                if (err) {
+                    console.log('problem updating' + err);
+                    res.status(500).send(err);
+                }
+                res.status(200).send(item);
             });
         });
 });
+
+app.get('/restaurants', (req, res) => {
+    let name = req.params.name;
+    let tag = req.params.tag;
+
+    let queryparams = [];
+
+    if (name) {
+        queryparams.push({
+            name: name
+        });
+    }
+    if (tag) {
+        queryparams.push({
+            tag: tag
+        });
+    }
+    Restaurant.find({
+        $or: queryparams
+    }, (err, rest) => {
+        if (err) {
+            res.status(200).send(err)
+        }
+        res.status(500).send(rest)
+    });
+
+})
 
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/myRestApp');
