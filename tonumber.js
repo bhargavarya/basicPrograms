@@ -1,8 +1,14 @@
 function toNumber(string){
-    let num = 0;
+    
+    let arr = [];
+    let k = 0;
+
     for(i = 0; i < string.length; i ++){
-        num = num*10 + (string[i].charCodeAt(0)-'0'.charCodeAt(0));
+    
+        arr[i] = (string[i].charCodeAt(0) - "0".charCodeAt(0));
+        k += arr[i] * Math.pow(10, string.length-i-1);
     }
-    return (num);
+    console.log(k);
 }
-console.log(toNumber('12347056'));
+
+toNumber('12347056');

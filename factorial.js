@@ -1,16 +1,21 @@
 function factorial(a){
-    if(a < 0){
-        return(undefined);
-    }else{
-        let total = 1;
-        for(i = 1; i <= a; i++){
-            total = total * i;
-        }return(total);
-    }
+
+let fact = 1;
+
+if (a > 0 ){
+for (i = 1; i <= a; i++){
+    fact = fact * i;
+}
+console.log('Factorial of '+ a + ' is ' + fact);
+} 
+
+else if (a < 0) {
+    console.log('Factorial of a neagative number is not defined');
 }
 
-console.log(factorial(3));
-console.log(factorial(-3));
-console.log(factorial(0));
-console.log(factorial(6));
-console.log(factorial(15));
+else {
+    console.log('Factorial of Zero is 1');
+}
+}
+
+return factorial(5);

@@ -1,12 +1,13 @@
-function elemLessThan(array,number){
-    if(number == undefined || array == []){
-        return (undefined);
-    }else{
-        for(i = 0; i < array.length; i++ ){
-            if(array[i] > number){
-                return (i);
-            }
-        }return (array.length); 
+function isLessThan(array,number){
+    //to compare elements with the number
+    for(i = 0; i < array.length; i++ ){
+        
+        if(array[i] > number){
+
+            return ( console.log(i)); //returns number of elements lesser than the number
+        }
     }
+    return (console.log(array.length)); //returns the array length as all the elements are smaller
 }
-console.log(elemLessThan ([3,5,7,9], -2));
+
+isLessThan ([3,5,7,9], 2);
